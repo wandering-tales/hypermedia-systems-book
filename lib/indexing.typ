@@ -5,7 +5,7 @@
 #let index(..content) = if is-pandoc {
   //
 } else {
-  context [#metadata((content: content.pos(), location: here()))<jkrb_index>]
+  locate(loc => [#metadata((content: content.pos(), location: loc))<jkrb_index>])
 }
 
 #let indexed(content) = [#index(content)#content]
